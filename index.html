@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Golf Scorecard</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</head>
+<body class="dark">
+  <!-- Original content from user's index.html -->
+  <!-- View 1: Start Screen -->
+  <div id="view-start" class="view">
+    <img src="icon.png" alt="App Logo" class="logo" />
+    <h1>Scorecard</h1>
+
+    <div class="card">
+      <label>Course Name</label>
+      <input type="text" id="course-name" placeholder="Enter course name" />
+      <label>Game Date</label>
+      <input type="date" id="game-date" />
+    </div>
+
+    <div class="card">
+      <h2>Players</h2>
+
+      <div class="player-entry">
+        <input type="text" id="player1" placeholder="Player 1 Name" />
+        <select id="color1">
+          <option value="red" class="red">Red</option>
+          <option value="blue" class="blue">Blue</option>
+          <option value="yellow" class="yellow">Yellow</option>
+          <option value="green" class="green">Green</option>
+          <option value="purple" class="purple">Purple</option>
+          <option value="orange" class="orange">Orange</option>
+        </select>
+      </div>
+
+      <div class="player-entry">
+        <input type="text" id="player2" placeholder="Player 2 Name" />
+        <select id="color2">
+          <option value="red" class="red">Red</option>
+          <option value="blue" class="blue">Blue</option>
+          <option value="yellow" class="yellow">Yellow</option>
+          <option value="green" class="green">Green</option>
+          <option value="purple" class="purple">Purple</option>
+          <option value="orange" class="orange">Orange</option>
+        </select>
+      </div>
+
+      <div class="player-entry">
+        <input type="text" id="player3" placeholder="Player 3 Name" />
+        <select id="color3">
+          <option value="red" class="red">Red</option>
+          <option value="blue" class="blue">Blue</option>
+          <option value="yellow" class="yellow">Yellow</option>
+          <option value="green" class="green">Green</option>
+          <option value="purple" class="purple">Purple</option>
+          <option value="orange" class="orange">Orange</option>
+        </select>
+      </div>
+
+      <div class="player-entry">
+        <input type="text" id="player4" placeholder="Player 4 Name" />
+        <select id="color4">
+          <option value="red" class="red">Red</option>
+          <option value="blue" class="blue">Blue</option>
+          <option value="yellow" class="yellow">Yellow</option>
+          <option value="green" class="green">Green</option>
+          <option value="purple" class="purple">Purple</option>
+          <option value="orange" class="orange">Orange</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="start-game">Start Game</button>
+    <button id="view-stats-button">View Stats</button>
+  </div>
+
+  <!-- View 2: Scorecard -->
+  <div id="view-scorecard" class="view hidden">
+    <h2 id="scorecard-title"></h2>
+    <div class="table-container">
+      <table id="scorecard">
+        <thead>
+          <tr>
+            <th>Hole</th>
+            <th>Par</th>
+            <th id="player1-header"></th>
+            <th id="player2-header"></th>
+            <th id="player3-header"></th>
+            <th id="player4-header"></th>
+          </tr>
+        </thead>
+        <tbody id="scorecard-body"></tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td id="total-par">0</td>
+            <td id="total-1">0</td>
+            <td id="total-2">0</td>
+            <td id="total-3">0</td>
+            <td id="total-4">0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <button id="back-to-start-from-scorecard">Back to Start</button>
+  </div>
+
+  <!-- View 3: Stats -->
+  <div id="view-stats" class="view hidden">
+    <h2>Player Stats</h2>
+    <div class="table-container">
+      <table id="stats-table">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Games</th>
+            <th>Avg Score</th>
+            <th>Wins</th>
+            <th>Hole-in-Ones</th>
+          </tr>
+        </thead>
+        <tbody id="stats-summary"></tbody>
+      </table>
+    </div>
+
+    <h2>Past Games</h2>
+    <select id="saved-games-dropdown">
+      <option value="">Select a saved game</option>
+    </select>
+
+    <div id="saved-game-details" class="card"></div>
+
+    <div class="stats-buttons">
+      <button id="delete-game">Delete Selected Game</button>
+      <button id="clear-all-games">Clear All Games</button>
+    </div>
+
+    <button id="back-to-start">Back to Start</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

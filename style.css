@@ -1,0 +1,226 @@
+/* General Dark Mode Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Logo image */
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2 {
+  margin-top: 0.5rem;
+}
+
+/* Container Styles for All Views */
+#view-start, 
+#view-scorecard, 
+#view-stats {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Player Setup Layout */
+.player-setup {
+  margin: 0.5rem 0;
+}
+
+.player-setup label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+.player-setup input,
+.player-setup select {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: yes;
+}
+
+/* Player entry spacing & style */
+.player-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+/* Name input takes most space */
+.player-entry input {
+  flex: 1;
+  height: 38px; /* Match dropdown height */
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: yes;
+  background-color: #222;
+  color: white;
+}
+
+/* Dropdown styling */
+.player-entry select {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: yes;
+  background-color: #444;
+  color: white;
+  width: 80px; /* Narrow width */
+  height: 38px; /* Match input height */
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+/* Colored dropdown options */
+.player-entry select option.red { color: red; }
+.player-entry select option.blue { color: dodgerblue; }
+.player-entry select option.yellow { color: gold; }
+.player-entry select option.green { color: limegreen; }
+.player-entry select option.purple { color: violet; }
+.player-entry select option.orange { color: orange; }
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 0.4rem;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+/* Bright green par column */
+td:nth-child(2),
+#total-par {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+/* Score Input Styling */
+.score-input {
+  width: 50px;
+  text-align: center;
+  background-color: #333;
+  color: inherit;
+  border: yes;
+  border-radius: 4px;
+  -moz-appearance: textfield;
+}
+
+.score-input::-webkit-inner-spin-button,
+.score-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Player Colors */
+.player-red { color: red; }
+.player-orange { color: orange; }
+.player-yellow { color: yellow; }
+.player-green { color: limegreen; }
+.player-blue { color: dodgerblue; }
+.player-purple { color: violet; }
+
+/* Color Dot */
+.color-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.player-red.color-dot { background-color: red; }
+.player-orange.color-dot { background-color: orange; }
+.player-yellow.color-dot { background-color: yellow; }
+.player-green.color-dot { background-color: limegreen; }
+.player-blue.color-dot { background-color: dodgerblue; }
+.player-purple.color-dot { background-color: violet; }
+
+/* Buttons */
+button {
+  background-color: #444;
+  color: white;
+  border: yes;
+  padding: 0.6rem 1rem;
+  margin: 0.4rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+#delete-game, #clear-all-games {
+  background-color: #a33;
+}
+
+#delete-game:hover, #clear-all-games:hover {
+  background-color: #c44;
+}
+
+/* Card for Saved Game Details & Main Cards */
+.card {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid white; /* ✅ White border for main cards */
+}
+
+/* Stats Table */
+#stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#stats-table th, #stats-table td {
+  border: 1px solid #555;
+  padding: 0.4rem;
+}
+
+#stats-table td {
+  text-align: center;
+}
+
+#stats-table td:first-child {
+  text-align: left;
+}
+
+/* Stats buttons layout */
+.stats-buttons {
+  margin-top: 1rem;
+}
+
+/* Mobile-friendly horizontal scroll for tables */
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  min-width: 600px; /* Prevents columns from squishing too much */
+}
